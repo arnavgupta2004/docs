@@ -308,26 +308,26 @@ The script can access a logger to log messages. Each row is available in a `row`
   <iframe src="https://www.youtube.com/embed/XiPegyF6uJY?si=5OQgTZBqMBcu4gHZ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-The PurgeExecution task can purge all the files stored inside the internal context by a flow execution.
+The PurgeCurrentExecutionFiles task can purge all the files stored inside the internal context by a flow execution.
 It can be used at the end of a flow to purge all its generated files.
 
 ```yaml
 tasks:
   - id: purge-execution
-    type: io.kestra.plugin.core.storage.PurgeExecution
+    type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
 ```
 
 The execution context itself is not available after the end of the execution and is automatically deleted from Kestra's repository after a retention period (seven days by default) that can be changed; see [Runtime and Storage](../../configuration/02.runtime-and-storage/index.md).
 
 
-The [Purge](/plugins/core) task purges storages, logs, and executions of previous executions. This flow purges all of these every day:
+The [PurgeExecutions](/plugins/core/execution/io.kestra.plugin.core.execution.purgeexecutions) task purges the executions, logs, metrics and storage of previous executions. This flow purges all of these every day:
 ```yaml
 id: purge
 namespace: company.team
 
 tasks:
   - id: purge
-    type: io.kestra.plugin.core.storage.Purge
+    type: io.kestra.plugin.core.execution.PurgeExecutions
     endDate: "{{ now() | dateAdd(-1, 'MONTHS') }}"
 
 triggers:

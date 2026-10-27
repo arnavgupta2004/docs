@@ -70,11 +70,11 @@ tasks:
       type: io.kestra.plugin.ai.provider.GoogleGemini
       modelName: gemini-3.5-flash-lite
       apiKey: "{{ secret('GEMINI_API_KEY') }}"
-      configuration:
-        logRequests: true
-        logResponses: true
-        responseFormat:
-          type: TEXT
+    configuration:
+      logRequests: true
+      logResponses: true
+      responseFormat:
+        type: TEXT
     systemMessage: |
         You are a precise technical assistant.
         Produce a {{ inputs.summary_length }} summary in {{ inputs.language }}.
@@ -93,11 +93,11 @@ tasks:
       type: io.kestra.plugin.ai.provider.GoogleGemini
       modelName: gemini-3.5-flash-lite
       apiKey: "{{ secret('GEMINI_API_KEY') }}"
-      configuration:
-        logRequests: true
-        logResponses: true
-        responseFormat:
-          type: TEXT
+    configuration:
+      logRequests: true
+      logResponses: true
+      responseFormat:
+        type: TEXT
     prompt: Generate exactly 1 sentence English summary of "{{ outputs.multilingual_agent.textOutput }}"
 ```
 

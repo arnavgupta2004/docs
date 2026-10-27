@@ -125,6 +125,7 @@ tasks:
 
 outputs:
   - id: final_result
+    type: FILE
     value: "{{ outputs.sql_query.uri }}"
 
 triggers:
@@ -179,6 +180,7 @@ tasks:
 
 outputs:
   - id: finalResult
+    type: FILE
     value: "{{ outputs.sqlQuery.uri }}"
 
 triggers:

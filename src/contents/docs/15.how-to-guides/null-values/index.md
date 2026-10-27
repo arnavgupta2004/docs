@@ -161,7 +161,6 @@ inputs:
     defaults: US
   - id: date
     type: DATETIME
-    required: false
     defaults: 2023-12-24T14:00:00.000Z
 
 tasks:

@@ -227,7 +227,9 @@ namespace: system
 tasks:
   - id: purge_kv
     type: io.kestra.plugin.core.kv.PurgeKV
-    expiredOnly: true
+    behavior:
+      type: key
+      expiredOnly: true
     namespaces:
       - company
     includeChildNamespaces: true

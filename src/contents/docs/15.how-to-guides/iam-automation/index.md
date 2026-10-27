@@ -38,7 +38,6 @@ This flow is triggered by a webhook — for example, from an HRIS system when a 
 ```yaml
 id: onboard_user
 namespace: company.iam
-editions: ["EE", "Cloud"]
 
 inputs:
   - id: email
@@ -61,6 +60,9 @@ triggers:
   - id: from_hris
     type: io.kestra.plugin.core.trigger.Webhook
     key: "{{ secret('ONBOARD_WEBHOOK_KEY') }}"
+    inputs:
+      email: "{{ trigger.body.email }}"
+      group_id: "{{ trigger.body.group_id }}"
 ```
 
 The task outputs `invitationId`, which you can chain into downstream tasks if needed. If an email server is configured in Kestra, the user receives an invitation email automatically. Otherwise, retrieve the invitation link from the IAM page to share manually.
@@ -99,6 +101,9 @@ triggers:
   - id: from_hris
     type: io.kestra.plugin.core.trigger.Webhook
     key: "{{ secret('OFFBOARD_WEBHOOK_KEY') }}"
+    inputs:
+      user_id: "{{ trigger.body.user_id }}"
+      group_id: "{{ trigger.body.group_id }}"
 ```
 
 ## Provision a service account for CI/CD

@@ -149,7 +149,7 @@ tasks:
     password: "{{ secret('GITHUB_ACCESS_TOKEN') }}"
     url: https://github.com/git_username/flows
     branch: develop
-    sourcenamespace: company.team
+    sourceNamespace: company.team
     targetNamespace: prod
     gitDirectory: flows
     commitMessage: "push all development flows to Git and create a PR"
@@ -216,7 +216,7 @@ tasks:
     password: "{{ secret('GITHUB_ACCESS_TOKEN') }}"
     url: https://github.com/git_username/flows
     branch: develop
-    sourcenamespace: company.team
+    sourceNamespace: company.team
     targetNamespace: prod
     gitDirectory: flows
     commitMessage: "push all flows"
