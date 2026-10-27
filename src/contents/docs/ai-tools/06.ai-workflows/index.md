@@ -190,7 +190,7 @@ tasks:
     onResume:
       - id: approve
         description: Are you happy with the photo or not?
-        type: BOOLEAN
+        type: BOOL
 
       - id: feedback
         description: Write the prompt again with more detail

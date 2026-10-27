@@ -90,7 +90,7 @@ namespace: prod.marketing.attribution
 
 inputs:
   - id: api_endpoint
-    type: URL
+    type: URI
     defaults: https://dummyjson.com/products
 
 tasks:
@@ -144,7 +144,7 @@ namespace: prod.marketing.attribution
 
 inputs:
   - id: apiEndpoint
-    type: URL
+    type: URI
     defaults: https://dummyjson.com/products
 
 tasks:

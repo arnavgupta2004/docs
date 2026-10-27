@@ -87,7 +87,7 @@ tasks:
     onResume:
       - id: approved
         description: Approve the request?
-        type: BOOLEAN
+        type: BOOL
         defaults: true
       - id: reason
         description: Reason for approval or rejection?
