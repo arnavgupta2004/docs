@@ -106,8 +106,7 @@ tasks:
     type: io.kestra.plugin.scripts.python.Script
     description: Ingests raw data into the Bronze layer (simulated).
     runner: DOCKER
-    docker:
-      image: python:3.10-slim-buster
+    containerImage: python:3.10-slim-buster
     script: |
       import pandas as pd
       import os
@@ -122,8 +121,7 @@ tasks:
     type: io.kestra.plugin.scripts.python.Script
     description: Cleans and transforms data from Bronze to Silver layer.
     runner: DOCKER
-    docker:
-      image: python:3.10-slim-buster
+    containerImage: python:3.10-slim-buster
     inputFiles:
       bronze_data.csv: "{{outputs.bronze_ingest.outputFiles['bronze_data.csv']}}"
     script: |
@@ -150,8 +148,7 @@ tasks:
     type: io.kestra.plugin.scripts.shell.Commands
     description: Performs a basic data quality check on the Silver layer.
     runner: DOCKER
-    docker:
-      image: busybox
+    containerImage: busybox
     inputFiles:
       silver_data.parquet: "{{outputs.silver_transform.outputFiles['silver_data.parquet']}}"
     commands:
@@ -168,8 +165,7 @@ tasks:
     type: io.kestra.plugin.scripts.shell.Commands
     description: Uploads the cleaned Silver data to the target lakehouse path (simulated).
     runner: DOCKER
-    docker:
-      image: busybox
+    containerImage: busybox
     commands:
       - 'echo "Simulating upload of {{outputs.silver_transform.outputFiles['silver_data.parquet']}} to {{inputs.target_silver_path}}"'
       - 'echo "Upload successful"'

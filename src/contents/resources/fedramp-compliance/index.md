@@ -88,8 +88,7 @@ tasks:
   - id: check-s3-public-access
     type: io.kestra.plugin.scripts.shell.Commands
     runner: DOCKER
-    docker:
-      image: amazon/aws-cli:2.15.0
+    containerImage: amazon/aws-cli:2.15.0
     commands:
       # Use the AWS CLI to find buckets with public read/write ACLs
       # The command will exit with an error if no buckets are found or if permissions are denied.

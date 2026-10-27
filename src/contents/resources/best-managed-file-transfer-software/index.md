@@ -147,8 +147,7 @@ tasks:
   - id: process_file
     type: io.kestra.plugin.scripts.python.Script
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     script: |
       import pandas as pd
       df = pd.read_csv("{{ outputs.download_from_sftp.uri }}")

@@ -117,8 +117,7 @@ tasks:
   - id: run-dbt-build
     type: io.kestra.plugin.dbt.cli.DbtCLI
     runner: DOCKER
-    docker:
-      image: ghcr.io/dbt-labs/dbt-snowflake:1.8.0
+    containerImage: ghcr.io/dbt-labs/dbt-snowflake:1.8.0
     inputFiles:
       .dbt/profiles.yml: |
         config:

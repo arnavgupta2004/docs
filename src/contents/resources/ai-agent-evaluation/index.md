@@ -105,8 +105,7 @@ tasks:
   - id: evaluate_output
     type: io.kestra.plugin.scripts.shell.Commands
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     commands:
       - |
         pip install -q pytest

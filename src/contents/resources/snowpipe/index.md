@@ -111,8 +111,7 @@ tasks:
 
   - id: data-quality-check
     type: io.kestra.plugin.scripts.python.Script
-    docker:
-      image: "python:3.11"
+    containerImage: "python:3.11"
     script: |
       # Example: A simple script to check for null customer_ids
       # In a real scenario, this would use a library like Great Expectations

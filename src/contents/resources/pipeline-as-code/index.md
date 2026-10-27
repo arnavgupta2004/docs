@@ -104,8 +104,7 @@ tasks:
   - id: run-python-validation
     type: io.kestra.plugin.scripts.python.Script
     # This task runs in an isolated container for dependency management
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     script: |
       # The working directory is automatically set to the cloned repo
       # allowing us to directly access its files.

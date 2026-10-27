@@ -88,8 +88,7 @@ tasks:
   - id: extract-and-prep-data
     type: io.kestra.plugin.scripts.shell.Commands
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     commands:
       - pip install pandas > /dev/null
       - |

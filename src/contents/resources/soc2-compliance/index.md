@@ -91,8 +91,7 @@ tasks:
       - id: check-public-s3-buckets
         type: io.kestra.plugin.scripts.shell.Commands
         runner: DOCKER
-        docker:
-          image: amazon/aws-cli:latest
+        containerImage: amazon/aws-cli:latest
         commands:
           - |
             aws s3api list-buckets --query "Buckets[].Name" --output text | tr '\t' '\n' | while read bucket_name; do
@@ -104,8 +103,7 @@ tasks:
       - id: check-iam-mfa
         type: io.kestra.plugin.scripts.shell.Commands
         runner: DOCKER
-        docker:
-          image: amazon/aws-cli:latest
+        containerImage: amazon/aws-cli:latest
         commands:
           - |
             aws iam list-users --query "Users[?PasswordLastUsed!=null].UserName" --output text | tr '\t' '\n' | while read user; do

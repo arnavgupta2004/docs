@@ -140,8 +140,7 @@ tasks:
   - id: check-expiry-date
     type: io.kestra.plugin.scripts.python.Script
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     beforeCommands:
       - pip install cryptography pyopenssl > /dev/null
     script: |

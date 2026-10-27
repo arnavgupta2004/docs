@@ -143,8 +143,7 @@ tasks:
 
   - id: train-model
     type: io.kestra.plugin.scripts.python.Script
-    docker:
-      image: scikit-learn/scikit-learn:latest
+    containerImage: scikit-learn/scikit-learn:latest
     script: |
       import pandas as pd
       from sklearn.model_selection import train_test_split

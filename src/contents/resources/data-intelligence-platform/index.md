@@ -70,8 +70,7 @@ tasks:
   - id: data_quality_check
     type: io.kestra.plugin.scripts.python.Script
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     script: |
       import json
       from kestra import Kestra

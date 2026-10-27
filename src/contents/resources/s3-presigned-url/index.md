@@ -101,8 +101,7 @@ tasks:
   - id: simulate_upload_and_download
     type: io.kestra.plugin.scripts.bash.Commands
     runner: DOCKER
-    docker:
-      image: curlimages/curl:latest
+    containerImage: curlimages/curl:latest
     commands:
       - |
         echo "Simulating upload to: {{ outputs.generate_upload_url.uri }}"

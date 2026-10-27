@@ -77,8 +77,7 @@ tasks:
   - id: dbt-setup
     type: io.kestra.plugin.scripts.shell.Commands
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     commands:
       - pip install dbt-bigquery
       - cp profiles/dbt/profiles.yml .
@@ -86,8 +85,7 @@ tasks:
   - id: dbt-run
     type: io.kestra.plugin.dbt.cli.DbtCLI
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     commands:
       - dbt deps
       - dbt build

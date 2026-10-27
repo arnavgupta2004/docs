@@ -158,8 +158,7 @@ tasks:
   - id: run-diagnostics
     type: io.kestra.plugin.scripts.shell.Commands
     runner: DOCKER
-    docker:
-      image: ubuntu:latest
+    containerImage: ubuntu:latest
     env:
       TARGET_HOST: "{{ trigger.body.hostname }}"
     commands:

@@ -78,8 +78,7 @@ tasks:
   - id: process-report
     type: io.kestra.plugin.scripts.shell.Commands
     runner: DOCKER
-    docker:
-      image: bash:latest
+    containerImage: bash:latest
     commands:
       - echo "Processing file..."
       # Example processing: remove header and save to a new file

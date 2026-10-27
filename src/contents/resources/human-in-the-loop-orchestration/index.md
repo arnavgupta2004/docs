@@ -83,8 +83,7 @@ tasks:
   - id: flag_for_review
     type: io.kestra.plugin.scripts.python.Script
     runner: DOCKER
-    docker:
-      image: python:slim
+    containerImage: python:slim
     script: |
       import json
       from kestra import Kestra

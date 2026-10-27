@@ -119,8 +119,7 @@ tasks:
   - id: parse-and-transform
     type: io.kestra.plugin.scripts.python.Script
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     beforeCommands:
       - pip install edi-835-parser==1.4.1 # Example library for EDI parsing
     script: |

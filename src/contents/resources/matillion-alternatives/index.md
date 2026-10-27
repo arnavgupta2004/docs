@@ -68,8 +68,7 @@ tasks:
     dependsOn:
       - extract-load
     runner: DOCKER
-    docker:
-      image: ghcr.io/dbt-labs/dbt-snowflake:1.5.0
+    containerImage: ghcr.io/dbt-labs/dbt-snowflake:1.5.0
     commands:
       - dbt run
 ```

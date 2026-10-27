@@ -79,8 +79,7 @@ tasks:
   - id: python_script_with_logging
     type: io.kestra.plugin.scripts.python.Script
     description: "Demonstrates capturing different log levels from a Python script."
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     script: |
       import logging
       import sys

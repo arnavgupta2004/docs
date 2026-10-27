@@ -79,8 +79,7 @@ tasks:
   - id: fetch-users
     type: io.kestra.plugin.scripts.python.Script
     description: Fetches user data from a public API and processes it.
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     warningOnStdErr: false
     script: |
       import requests

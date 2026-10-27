@@ -130,8 +130,7 @@ namespace: production.mlops
 tasks:
   - id: train_and_validate
     type: io.kestra.plugin.scripts.python.Script
-    docker:
-      image: my-ml-image:latest
+    containerImage: my-ml-image:latest
     script: |
       python train.py --output-path /kestra/outputs/model.pkl
 

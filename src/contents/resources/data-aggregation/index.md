@@ -119,8 +119,7 @@ tasks:
   - id: aggregate_data
     type: io.kestra.plugin.scripts.python.Script
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     beforeCommands:
       - pip install pandas
     script: |

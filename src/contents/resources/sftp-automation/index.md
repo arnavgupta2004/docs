@@ -85,8 +85,7 @@ tasks:
 
   - id: process_inventory_data
     type: io.kestra.plugin.scripts.python.Script
-    docker:
-      image: python:slim
+    containerImage: python:slim
     script: |
       import pandas as pd
       from kestra import Kestra

@@ -95,8 +95,7 @@ tasks:
   - id: stage-and-transform
     type: io.kestra.plugin.scripts.python.Script
     runner: DOCKER
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     beforeCommands:
       - pip install pandas hashlib
     script: |

@@ -72,8 +72,7 @@ tasks:
       - id: attempt-processing
         type: io.kestra.plugin.scripts.shell.Commands
         runner: DOCKER
-        docker:
-          image: "bash:latest"
+        containerImage: "bash:latest"
         commands:
           # This script simulates a processing failure
           - echo "Processing message: {{ taskrun.value }}"

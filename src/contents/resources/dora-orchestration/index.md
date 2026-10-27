@@ -80,8 +80,7 @@ tasks:
   - id: preprocess-data
     type: io.kestra.plugin.scripts.python.Script
     description: Prepares and validates the training dataset.
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     script: |
       import json
       print("Starting data preprocessing...")

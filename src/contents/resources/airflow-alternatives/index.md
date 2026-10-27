@@ -64,8 +64,7 @@ namespace: company.team
 tasks:
   - id: python-transform
     type: io.kestra.plugin.scripts.python.Script
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     script: |
       print("Processing file: {{ trigger.uri }}")
       # Your transformation logic here

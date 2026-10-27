@@ -66,8 +66,7 @@ namespace: production.webhooks
 tasks:
   - id: python-transform
     type: io.kestra.plugin.scripts.python.Script
-    docker:
-      image: python:3.11
+    containerImage: python:3.11
     script: |
       import json
       data = json.loads('{{ trigger.body }}')

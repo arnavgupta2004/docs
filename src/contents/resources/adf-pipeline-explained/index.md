@@ -71,8 +71,7 @@ tasks:
     type: io.kestra.plugin.scripts.shell.Commands
     description: "Ensure Azure CLI is available in the runner environment"
     runner: DOCKER
-    docker:
-      image: mcr.microsoft.com/azure-cli:latest
+    containerImage: mcr.microsoft.com/azure-cli:latest
     commands:
       - az --version
 
@@ -80,8 +79,7 @@ tasks:
     type: io.kestra.plugin.scripts.shell.Commands
     description: "Start the ADF pipeline run and capture the run ID"
     runner: DOCKER
-    docker:
-      image: mcr.microsoft.com/azure-cli:latest
+    containerImage: mcr.microsoft.com/azure-cli:latest
     env:
       AZURE_CLIENT_ID: "{{ secret('AZURE_CLIENT_ID') }}"
       AZURE_CLIENT_SECRET: "{{ secret('AZURE_CLIENT_SECRET') }}"
@@ -100,8 +98,7 @@ tasks:
     type: io.kestra.plugin.scripts.shell.Commands
     description: "Poll the ADF pipeline run status until it completes"
     runner: DOCKER
-    docker:
-      image: mcr.microsoft.com/azure-cli:latest
+    containerImage: mcr.microsoft.com/azure-cli:latest
     env:
       AZURE_CLIENT_ID: "{{ secret('AZURE_CLIENT_ID') }}"
       AZURE_CLIENT_SECRET: "{{ secret('AZURE_CLIENT_SECRET') }}"

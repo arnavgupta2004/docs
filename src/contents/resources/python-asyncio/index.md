@@ -68,8 +68,7 @@ tasks:
   - id: fetch-concurrent-data
     type: io.kestra.plugin.scripts.python.Script
     description: Fetches data from multiple API endpoints concurrently using asyncio.
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     beforeCommands:
       - pip install httpx
     script: |

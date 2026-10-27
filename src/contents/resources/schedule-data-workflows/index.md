@@ -119,8 +119,7 @@ tasks:
 
   - id: process_data
     type: io.kestra.plugin.scripts.python.Script
-    docker:
-      image: python:3.11-slim
+    containerImage: python:3.11-slim
     script: |
       import pandas as pd
       df = pd.read_csv("{{ outputs.download_csv.uri }}")
